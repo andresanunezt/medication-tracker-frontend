@@ -4,44 +4,41 @@ import { connect } from 'react-redux'
 
 import { fetchAllMeds } from '../redux/actions/index.js'
 
-import MedicationList from "./MedicationList.js";
+
+import Medication from "./Medication.js";
 
 class Medications extends Component{ 
 
 
-    constructor(props){ super(props);
- 
-        this.state={ rememberUS: [] }
-
-    }
+    
     componentDidMount(){
 
         
         this.props.fetchAllMeds()
         
-            //this.setState({ rememberUS: this.props.fetchUS() })
-            //console.log(this.props.fetchUS())
-    
     
     }
+
+
     render(){ console.log(this.props)
         
-        debugger
-        // const meds = this.props.medications.medications.map(  (medication)=>{  return(<>
 
-        //    <MedicationList />
+        const meds = this.props.medications.map(  (medication)=>{  return(<>
+
+           <Medication key={medication.id} medication={medication} />
 
             
-        //     </>)  }  )
+            </>)  }  )
        
 
         return(<>
 
         <h1>pls render</h1>
       
-        <MedicationList medications={this.props.medications} />
+ 
+        {meds}
 
-        </>);
+        </>)
 
     }
     
@@ -51,7 +48,7 @@ class Medications extends Component{
 const mapStateToProps =(state)=>{ 
 
     console.log(state)
-    debugger
+    
     return{
        medications: state.medicationReducer,
         

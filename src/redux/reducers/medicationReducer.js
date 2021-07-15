@@ -1,15 +1,13 @@
 
-export  const medicationReducer =  (state = [], action)=> {
+export const medicationReducer =  (state = [], action)=> {
   
   
     switch(action.type){
   
         case "ADD_MEDICATIONS":
-          return {
-                      ...state,
-                      medications: [...action.medications],
+          return [...action.medications]
                       
-                    }
+                    
         default: 
             return state
   
