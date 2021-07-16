@@ -9,14 +9,7 @@ import NewMedicationForm from './components/NewMedicationForm';
 
 
 class App extends Component{ 
-  
-  constructor(props){ super(props);
 
-
-    
-
-  }
-  
 
   
 
@@ -24,7 +17,7 @@ class App extends Component{
 render() {
 
   return (<>
-    <h1>is is rendering?</h1>
+    <h1>Medications</h1>
 
   
 

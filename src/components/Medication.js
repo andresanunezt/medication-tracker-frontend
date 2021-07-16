@@ -6,6 +6,8 @@ import { Card } from 'react-bootstrap';
 
 import { connect } from 'react-redux'
 
+import EditMedicationForm from "./EditMedicationForm"
+
 import DeleteMedicationButton from "./DeleteMedicationButton.js";
 
 import { deleteMedication} from '../redux/actions/index.js'
@@ -35,6 +37,8 @@ class Medication extends Component  {
     render() { 
    
         console.log(this.props)
+        console.log(Date())
+
     return (
         
         // <div>
@@ -55,13 +59,15 @@ class Medication extends Component  {
                     <Card.Text>Dosage: {this.props.medication.medication_dose} </Card.Text>
                     <Card.Text>Description: {this.props.medication.medication_description} </Card.Text>
                     <Card.Text>Last Taken: {this.props.medication.last_taken} </Card.Text>
-                    
+              
                     <DeleteMedicationButton medication={this.props.medication}/>
-                    {/* <button onClick={this.clickHandler}> Delete Med</button><br/> */}
+                 
                 </Card.Body>
+
+                <EditMedicationForm medication={this.props.medication} />
             </Card>
 
-    
+                
            
       
     );  

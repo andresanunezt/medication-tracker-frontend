@@ -3,7 +3,7 @@ import { Component } from "react"
 
 import { connect } from 'react-redux'
 
-// import { editReActor } from './redux/actions/index.js'
+import { editMedication } from '../redux/actions/index.js'
 
 
 
@@ -13,7 +13,8 @@ class EditMedicationForm extends Component{
 
     constructor(props){ super(props);
         
-        this.state={ name: "" }
+        console.log(props)
+        this.state={ last_taken: this.props.medication.last_taken }
 
     }
     
@@ -21,15 +22,16 @@ class EditMedicationForm extends Component{
     submitHandler=(e)=>{ e.preventDefault() 
     
     
-        console.log("IN THE FORM - Name:  ", this.state.name)
-
+       
+        console.log(this.state)
+        console.log(this.props)
         
-        this.props.editReActor( this.state )
-            //X// this.props.reActorNameSUBMIT(this.state.name)
+        this.props.editMedication( this.state)
+         
         
     
     }
-    onChangeHandler=(e)=>{ //console.log("editing...") 
+    onChangeHandler=(e)=>{ 
 
         console.log(e.target.name, "  ::  ", e.target.value) 
 
@@ -44,14 +46,16 @@ class EditMedicationForm extends Component{
 
     render(){  
 
+        console.log(this.props)
+
         return(<>
         
         <div>
 
             <form onSubmit={this.submitHandler}>
 
-                <input type="text" placeholder="name" value={this.state.name} onChange={this.onChangeHandler}
-                    name="name"
+                <input type="text" placeholder="Last Taken" value={this.state.last_taken} onChange={this.onChangeHandler}
+                    name="last_taken"
                 />
                 <input type="submit" value="update"/>
             </form>
@@ -63,16 +67,16 @@ class EditMedicationForm extends Component{
 
 }
 
-const mapDispatchToProps =(dispatch)=>{
+// const mapStateToProps =(state)=>{ 
 
-    console.log("========    ", dispatch.action)  // 
+//     console.log(state)
+    
+//     return{
+//        last_taken: state.medicationReducer,
+        
+//     }
 
-    return{ 
-        // if(dispatch)
-        editReActor: (newReActor)=> dispatch(editReActor(newReActor))
+// }
 
-    }
 
-}
-\
-export default connect(null, mapDispatchToProps)(EditMedicationForm); 
+export default connect(null, {editMedication})(EditMedicationForm); 
