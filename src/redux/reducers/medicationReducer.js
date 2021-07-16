@@ -1,13 +1,22 @@
 
 export const medicationReducer =  (state = [], action)=> {
   
-  
+  console.log(action)
     switch(action.type){
   
         case "ADD_MEDICATIONS":
           return [...action.medications]
-                      
-                    
+
+        case "ADD_NEW_MEDICATION":
+
+         return [...state,action.medications]
+
+           
+         case "DELETE_MEDICATION":
+          let restOfMeds = state.filter( (medication)=> medication !== action.medication )
+          return [...restOfMeds]
+
+                                 
         default: 
             return state
   

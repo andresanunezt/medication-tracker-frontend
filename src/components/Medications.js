@@ -23,8 +23,14 @@ class Medications extends Component{
     render(){ console.log(this.props)
         
 
-        const meds = this.props.medications.map(  (medication)=>{  return(<>
+        const meds = this.props.medications.map(  (medication)=>{  
+            
+            console.log(medication.id)
+            
+            // debugger
+      return(<>
 
+       
            <Medication key={medication.id} medication={medication} />
 
             
