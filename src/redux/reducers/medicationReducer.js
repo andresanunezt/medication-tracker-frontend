@@ -14,8 +14,18 @@ export const medicationReducer =  (state = [], action)=> {
          
          
          case "EDIT_MEDICATION":
-
-          return [...state, action.medication]
+          
+         
+         
+          console.log(action.medication)
+          
+          debugger
+          
+          let allMeds = [...state]
+          console.log(allMeds)
+          allMeds.findIndex( (m)=> m.id === action.medication.id )
+          
+          return  [...allMeds, action.medication]
  
            
          case "DELETE_MEDICATION":

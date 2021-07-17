@@ -49,14 +49,14 @@ export const fetchAllMeds =()=>{
 
 export const editMedication =(editMedication)=>{
 
-    console.log(deleteMedication)
+    console.log(editMedication)
 
     return (dispatch)=>{
 
         fetch(`http://localhost:3000/medications/${editMedication.id}`,{
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(editMedication),
+            body: JSON.stringify({medication: editMedication}),
             })
         .then(resp => resp.json())
         .then(medication => {    

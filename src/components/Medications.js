@@ -3,7 +3,9 @@ import { Component } from "react";
 import { connect } from 'react-redux'
 
 import { fetchAllMeds } from '../redux/actions/index.js'
+// import { NavLink } from 'react-router-dom'
 
+import NewMedicationForm from './NewMedicationForm';
 
 import Medication from "./Medication.js";
 
@@ -43,7 +45,8 @@ class Medications extends Component{
       
  
         {meds}
-
+{/* <NewMedicationForm /> */}
+       
         </>)
 
     }

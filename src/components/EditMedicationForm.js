@@ -11,18 +11,34 @@ import { editMedication } from '../redux/actions/index.js'
 class EditMedicationForm extends Component{
 
 
-    constructor(props){ super(props);
+    constructor(){ super();
         
-        console.log(props)
-        this.state={ last_taken: this.props.medication.last_taken }
+        console.log()
+        this.state={ id: "", last_taken: "" }
+
+    }
+
+
+    componentDidMount() {
+
+        this.setState({
+            id: this.props.medication.id,
+            last_taken: this.props.medication.last_taken
+        
+        })
+
+
+        console.log(this.state)
 
     }
     
 
-    submitHandler=(e)=>{ e.preventDefault() 
+    submitHandler=(e)=>{ 
+        
+        e.preventDefault() 
     
     
-       
+
         console.log(this.state)
         console.log(this.props)
         
@@ -33,11 +49,13 @@ class EditMedicationForm extends Component{
     }
     onChangeHandler=(e)=>{ 
 
-        console.log(e.target.name, "  ::  ", e.target.value) 
+        console.log("name: ",e.target.name, "value: ", e.target.value) 
 
         this.setState({ [e.target.name]: e.target.value })
 
+        console.log(this.state)
 
+        
         
 
     }
@@ -67,16 +85,16 @@ class EditMedicationForm extends Component{
 
 }
 
-// const mapStateToProps =(state)=>{ 
+const mapStateToProps =(state,medId)=>{ 
 
-//     console.log(state)
-    
-//     return{
-//        last_taken: state.medicationReducer,
+    console.log(state)
+    const id = parseInt(medId.match.params.id)
+    return{
+        medication: state.medicationReducer.find(med => med.id === id)
         
-//     }
+    }
 
-// }
+}
 
 
-export default connect(null, {editMedication})(EditMedicationForm); 
+export default connect(mapStateToProps, {editMedication})(EditMedicationForm); 

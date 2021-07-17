@@ -8,30 +8,14 @@ import { connect } from 'react-redux'
 
 import EditMedicationForm from "./EditMedicationForm"
 
+import { NavLink } from 'react-router-dom'
+
 import DeleteMedicationButton from "./DeleteMedicationButton.js";
 
-import { deleteMedication} from '../redux/actions/index.js'
+import { deleteMedication, editMedication} from '../redux/actions/index.js'
 class Medication extends Component  {
 
 
-
-    //  clickHandler=(e)=>{  //console.log(e);  //
-    //     // console.log(e.target.innerText)
-  
-  
-    //       if(e.target.matches("h2")){ console.log(e.target.innerText) }
-          
-    //       if(e.target.matches("button")){ console.log(e.target.innerText) 
-
-
-    
-          
-    //           this.props.deleteMedication(this.props.medication)
-  
-    //       } 
-          
-
-        // }
 
 
     render() { 
@@ -64,7 +48,8 @@ class Medication extends Component  {
                  
                 </Card.Body>
 
-                <EditMedicationForm medication={this.props.medication} />
+                {/* <EditMedicationForm medication={this.props.medication} /> */}
+                <NavLink to={`/medications/${this.props.medication.id}/edit`}><button className="btn" onClick={()=>this.props.editMedication(this.props.medication)}>Edit</button></NavLink>
             </Card>
 
                 
@@ -84,6 +69,6 @@ const cardStyle = {
     paddingTop: 25, 
     paddingLeft: 50 
 }
-export default connect(null, { deleteMedication })(Medication)
+export default connect(null, { deleteMedication, editMedication })(Medication)
  
 
