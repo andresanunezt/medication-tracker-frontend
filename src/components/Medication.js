@@ -14,14 +14,15 @@ import { BrowserRouter as Router, Switch, Route, NavLink, Link } from 'react-rou
 import DeleteMedicationButton from "./DeleteMedicationButton.js";
 
 import { deleteMedication, editMedication} from '../redux/actions/index.js'
-class Medication extends Component  {
+
+const Medication = ({ medication, deleteMedication, editMedication }) => {
 
 
 
 
-    render() { 
    
-        console.log(this.props)
+   
+        console.log(medication)
         console.log(Date())
 
     return (
@@ -36,34 +37,48 @@ class Medication extends Component  {
         //     </div>
         // <Router>
 
-                    <Card style={cardStyle} data-id={this.props.key}>
+                    <Card style={cardStyle} data-id={medication.id}>
                     <Card.Body>
-                    <Card.Title style={{ color: 'red'}}> {this.props.medication.name} </Card.Title>
-                    <Card.Text> Directions:{this.props.medication.directions}</Card.Text>
-                    <Card.Text>Brand Name: {this.props.medication.brand_name}</Card.Text>
-                    <Card.Text>Dosage: {this.props.medication.medication_dose} </Card.Text>
-                    <Card.Text>Description: {this.props.medication.medication_description} </Card.Text>
-                    <Card.Text>Last Taken: {this.props.medication.last_taken} </Card.Text>
+                    <Card.Title style={{ color: 'red'}}> {medication.name} </Card.Title>
+                    <Card.Text> Directions:{medication.directions}</Card.Text>
+                    <Card.Text>Brand Name: {medication.brand_name}</Card.Text>
+                    <Card.Text>Dosage: {medication.medication_dose} </Card.Text>
+                    <Card.Text>Description: {medication.medication_description} </Card.Text>
+                    <Card.Text>Last Taken: {medication.last_taken} </Card.Text>
               
-                    <DeleteMedicationButton medication={this.props.medication}/>
+                    <DeleteMedicationButton medication={medication}/>
                  
                 </Card.Body>
 
                 {/* <EditMedicationForm medication={this.props.medication} /> */}
               
                 {/* <Route exact path="/medications/:id/edit" component={ EditMedicationForm} /> */}
-               
-                <NavLink to={`/medications/${this.props.medication.id}/edit`}><button className="btn" onClick={()=>this.props.editMedication(this.props.medication)}>Edit</button></NavLink>
-               
-            </Card>
+           
 
+             <Router>
+                <NavLink to={`/medications/${medication.id}/edit`}><button className="btn" onClick={()=>editMedication(medication)}>Edit</button></NavLink>
+                <Switch>
+               <Route exact path="/medications/:id/edit" component={ EditMedicationForm} />
+
+               </Switch>   
+
+
+                </Router>
+            </Card>
+            
+            // </Router>
 
            
       
     );  
-};
+
 
 }
+
+
+
+
+
 
 const cardStyle = {
     

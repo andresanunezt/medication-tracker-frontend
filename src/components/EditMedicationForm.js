@@ -70,6 +70,8 @@ class EditMedicationForm extends Component{
         
         <div>
 
+    
+
         <h5> Medication: {this.props.medication.name}</h5>
         <h5> Dosage: {this.props.medication.medication_dose}</h5>
             <form onSubmit={this.submitHandler}>
@@ -80,7 +82,7 @@ class EditMedicationForm extends Component{
                 <input type="submit" value="update"/>
             </form>
 
-               
+            <h5> Update the time you last took your medication! </h5>
         </div>
 
     </>);}
@@ -91,6 +93,7 @@ const mapStateToProps =(state,medId)=>{
 
     console.log(state)
     const id = parseInt(medId.match.params.id)
+    console.log(id)
     return{
         medication: state.medicationReducer.find(med => med.id === id)
         
