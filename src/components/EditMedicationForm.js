@@ -42,8 +42,8 @@ class EditMedicationForm extends Component{
         console.log(this.state)
         console.log(this.props)
         
-        this.props.editMedication( this.state)
-         
+        this.props.editMedication(this.state)
+        this.props.history.push('/medications')
         
     
     }
@@ -70,6 +70,8 @@ class EditMedicationForm extends Component{
         
         <div>
 
+        <h5> Medication: {this.props.medication.name}</h5>
+        <h5> Dosage: {this.props.medication.medication_dose}</h5>
             <form onSubmit={this.submitHandler}>
 
                 <input type="text" placeholder="Last Taken" value={this.state.last_taken} onChange={this.onChangeHandler}

@@ -8,7 +8,8 @@ import { connect } from 'react-redux'
 
 import EditMedicationForm from "./EditMedicationForm"
 
-import { NavLink } from 'react-router-dom'
+// import { NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, NavLink, Link } from 'react-router-dom';
 
 import DeleteMedicationButton from "./DeleteMedicationButton.js";
 
@@ -33,7 +34,7 @@ class Medication extends Component  {
         //         <h3>Description: {this.props.medication.medication_description} </h3>
         //         <h3>Last Taken: {this.props.medication.last_taken} </h3>
         //     </div>
-      
+        // <Router>
 
                     <Card style={cardStyle} data-id={this.props.key}>
                     <Card.Body>
@@ -49,10 +50,14 @@ class Medication extends Component  {
                 </Card.Body>
 
                 {/* <EditMedicationForm medication={this.props.medication} /> */}
+              
+                {/* <Route exact path="/medications/:id/edit" component={ EditMedicationForm} /> */}
+               
                 <NavLink to={`/medications/${this.props.medication.id}/edit`}><button className="btn" onClick={()=>this.props.editMedication(this.props.medication)}>Edit</button></NavLink>
+               
             </Card>
 
-                
+
            
       
     );  
@@ -61,8 +66,9 @@ class Medication extends Component  {
 }
 
 const cardStyle = {
+    
     width: '18rem', 
-    border: 'solid', 
+    border: '3px solid green', 
     marginBottom: 50, 
     marginTop: 50, 
     paddingBottom: 25, 
