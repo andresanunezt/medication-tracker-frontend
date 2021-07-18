@@ -59,7 +59,7 @@ const Medication = ({ medication, deleteMedication, editMedication }) => {
                 <NavLink to={`/medications/${medication.id}/edit`}><button className="btn" onClick={()=>editMedication(medication)}>Edit</button></NavLink>
                 <Switch>
                <Route exact path="/medications/:id/edit" component={ EditMedicationForm} />
-
+                
                </Switch>   
 
 

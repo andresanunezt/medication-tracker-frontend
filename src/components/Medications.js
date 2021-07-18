@@ -25,23 +25,23 @@ class Medications extends Component{
     render(){ console.log(this.props)
         
 
-        const meds = this.props.medications.map(  (medication)=>{  
+        const meds = this.props.medications.map(  (medication, i)=>{  
             
             console.log(medication.id)
             
             // debugger
-      return(<>
+      return(
 
-       
-           <Medication key={medication.id} medication={medication} />
+            <div >
+           <Medication  medication={medication} key={i} />
 
             
-            </>)  }  )
+           </div>)  }  )
        
 
         return(<>
 
-        <h1>pls render</h1>
+     
       
  
         {meds}

@@ -22,7 +22,7 @@ export const medicationReducer =  (state = [], action)=> {
          const num = allMeds.findIndex(medication => medication.id === action.medication.id );
           
          allMeds[num] = action.medication
-          debugger
+         
 
           return   [...allMeds]
           

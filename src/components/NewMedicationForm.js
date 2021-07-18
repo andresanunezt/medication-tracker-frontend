@@ -56,8 +56,8 @@ class NewMedicationForm extends Component{
 
         return(<>
         
-        <div>
-            <h1> ADD MEDICATION</h1>
+        <div >
+            <h4> ADD MEDICATION</h4>
             <form onSubmit={this.submitHandler}>
                 
                 <input type="text" placeholder="Name" value={this.state.name} onChange={this.onChangeHandler}
@@ -80,12 +80,17 @@ class NewMedicationForm extends Component{
                 />  <br></br>
                 {/* <input type="integer" placeholder="User" value={this.state.user_id} onChange={this.onChangeHandler}
                     name="user_id"
-                />   <br></br>                         */}
+                />  
+                                     */}
+
+                <br></br>
                 <input type="submit" value="submit"/>
+                
             </form>
 
-
+        <br></br>
             
+                
         </div>
 
     </>);}
