@@ -32,6 +32,8 @@ class DeleteMedicationButton extends Component{
        
 
         return(<>
+
+        
 <br></br>
 <button onClick={this.clickHandler}> Delete Mededication</button><br/>
 <br></br>

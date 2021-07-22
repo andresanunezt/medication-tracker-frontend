@@ -23,7 +23,7 @@ const Medication = ({ medication, deleteMedication, editMedication }) => {
     return (
         
        
-                <div class="centered">
+                <div className="centered">
                     <Card style={cardStyle} data-id={medication.id}>
                     <Card.Body>
                     <Card.Title style={{ color: 'red'}}> {medication.name} </Card.Title>

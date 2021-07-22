@@ -32,7 +32,7 @@
 
 
 .centered {
-  height: 100vh; /* Magic here */
+   /* Magic here */
   display: flex;
   justify-content: center;
   align-items: center;

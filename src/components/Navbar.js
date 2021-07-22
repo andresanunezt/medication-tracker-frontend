@@ -7,7 +7,7 @@ import Home from './Home'
 const Navbar = () => {
     return (
         <div className="navbar">
-         <img className="logo" src="/OnTrack.png" alt="OnTrack Logo." />
+         {/* <img className="logo" src="/OnTrackEdited.png" alt="OnTrack Logo." /> */}
             <ul className="navlinks-list">
 
            

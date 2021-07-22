@@ -41,7 +41,7 @@ class Medications extends Component{
         return(<>
 
      
-      
+        <h2 class="centered">Medications</h2>
  
         {meds}
 

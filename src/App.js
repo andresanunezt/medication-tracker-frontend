@@ -14,6 +14,8 @@ import Navbar from './components/Navbar';
 
 import Home from './components/Home'
 
+import Logo from './components/Logo'
+
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
@@ -30,6 +32,7 @@ render() {
   
 
     <Router>
+    <Logo />
     <Navbar />
     <Switch>
     <Route exact path ="/" component ={Home} /> 
