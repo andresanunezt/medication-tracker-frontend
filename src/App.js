@@ -8,6 +8,8 @@ import NewMedicationForm from './components/NewMedicationForm';
 
 import EditMedicationForm from './components/EditMedicationForm';
 
+import Footer from './components/Footer';
+
 import Navbar from './components/Navbar';
 
 import Home from './components/Home'
@@ -36,7 +38,7 @@ render() {
     <Route exact path="/medications/:id/edit" component={ EditMedicationForm} />
      
      </Switch>
- 
+     <Footer />
      </Router>
 </div>
   </>)};
