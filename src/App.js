@@ -2,13 +2,15 @@ import './App.css';
 
 import { Component } from 'react';
 
-import  Medications  from './components/Medications';
+import  Medications  from './containers/Medications';
 
 import NewMedicationForm from './components/NewMedicationForm';
 
 import EditMedicationForm from './components/EditMedicationForm';
 
 import Navbar from './components/Navbar';
+
+import Home from './components/Home'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -28,14 +30,13 @@ render() {
     <Router>
     <Navbar />
     <Switch>
+    <Route exact path ="/" component ={Home} /> 
     <Route exact path="/medications" component={ Medications } />
-    {/* <Route exact path="/medications/new" component={ NewMedicationForm } /> */}
+    <Route exact path="/medications/new" component={ NewMedicationForm } />
     <Route exact path="/medications/:id/edit" component={ EditMedicationForm} />
-      {/* <Medications/>
-      
-     <NewMedicationForm /> */}
+     
      </Switch>
-     {/* <Route exact path="/medications/new" component={ NewMedicationForm } /> */}
+ 
      </Router>
 </div>
   </>)};

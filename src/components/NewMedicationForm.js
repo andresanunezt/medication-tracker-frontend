@@ -78,10 +78,6 @@ class NewMedicationForm extends Component{
                 <input type="text" placeholder="Last Taken" value={this.state.last_taken} onChange={this.onChangeHandler}
                     name="last_taken"
                 />  <br></br>
-                {/* <input type="integer" placeholder="User" value={this.state.user_id} onChange={this.onChangeHandler}
-                    name="user_id"
-                />  
-                                     */}
 
                 <br></br>
                 <input type="submit" value="submit"/>
