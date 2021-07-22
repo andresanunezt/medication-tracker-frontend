@@ -3,9 +3,8 @@ import { Component } from "react";
 import { connect } from 'react-redux'
 
 import { fetchAllMeds } from '../redux/actions/index.js'
-// import { NavLink } from 'react-router-dom'
-// import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
-import NewMedicationForm from '../components/NewMedicationForm';
+
+
 
 import Medication from "../components/Medication.js";
 
@@ -27,16 +26,16 @@ class Medications extends Component{
 
         const meds = this.props.medications.map(  (medication, i)=>{  
             
-            console.log(medication.id)
+           
             
-            // debugger
+         
       return(
 
-            <div >
-           <Medication  medication={medication} key={i} />
+            
+           <Medication key={i} medication={medication}  />
 
             
-           </div>)  }  )
+           )  }  )
        
 
         return(<>
@@ -45,7 +44,7 @@ class Medications extends Component{
       
  
         {meds}
-{/* <NewMedicationForm /> */}
+
 
        
         </>)

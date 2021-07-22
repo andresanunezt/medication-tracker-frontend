@@ -1,7 +1,5 @@
 
 
-import { Component } from "react";
-
 import { Card } from 'react-bootstrap';
 
 import { connect } from 'react-redux'
@@ -20,23 +18,12 @@ const Medication = ({ medication, deleteMedication, editMedication }) => {
 
 
 
-   
-   
-        console.log(medication)
-        console.log(Date())
+
 
     return (
         
-        // <div>
-        //         <h1> name: {this.props.medication.name}</h1>
-        //         <h3> Directions:{this.props.medication.directions}</h3>
-        //         <h3>Brand Name: {this.props.medication.brand_name}</h3>
-        //         <h3>Dosage: {this.props.medimedication_dose} </h3>
-        //         <h3>Description: {this.props.medication.medication_description} </h3>
-        //         <h3>Last Taken: {this.props.medication.last_taken} </h3>
-        //     </div>
-        // <Router>
-
+       
+                <div class="centered">
                     <Card style={cardStyle} data-id={medication.id}>
                     <Card.Body>
                     <Card.Title style={{ color: 'red'}}> {medication.name} </Card.Title>
@@ -50,10 +37,7 @@ const Medication = ({ medication, deleteMedication, editMedication }) => {
                  
                 </Card.Body>
 
-                {/* <EditMedicationForm medication={this.props.medication} /> */}
-              
-                {/* <Route exact path="/medications/:id/edit" component={ EditMedicationForm} /> */}
-           
+               
 
              <Router>
                 <NavLink to={`/medications/${medication.id}/edit`}><button className="btn" onClick={()=>editMedication(medication)}>Edit</button></NavLink>
@@ -67,8 +51,8 @@ const Medication = ({ medication, deleteMedication, editMedication }) => {
             
             </Card>
             
-            // </Router>
-
+            
+            </div>
            
       
     );  

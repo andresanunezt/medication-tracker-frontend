@@ -27,7 +27,7 @@ render() {
 
   return (<>
   <div>
-    <h1>Medications</h1>
+  
 
     <Router>
     <Navbar />
