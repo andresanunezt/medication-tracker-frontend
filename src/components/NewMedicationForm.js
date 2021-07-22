@@ -34,10 +34,7 @@ class NewMedicationForm extends Component{
     }
     onChangeHandler=(e)=>{ 
 
-        console.log(e.target.name, "  ::  ", e.target.value)  //
-
-        
-
+      
         this.setState({ [e.target.name]: e.target.value })
 
 
@@ -45,9 +42,6 @@ class NewMedicationForm extends Component{
 
     }
   
- 
-    
-    // alertMe=(typingInput)=>{   }
      
 
 
@@ -56,10 +50,10 @@ class NewMedicationForm extends Component{
 
         return(<>
         
-        <div >
-            <h4> ADD MEDICATION</h4>
+        <div className="centered">
+            
             <form onSubmit={this.submitHandler}>
-                
+            <h4> ADD MEDICATION</h4>
                 <input type="text" placeholder="Name" value={this.state.name} onChange={this.onChangeHandler}
                     name="name"
                 /> <br></br>

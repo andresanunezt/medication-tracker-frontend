@@ -74,6 +74,7 @@ class EditMedicationForm extends Component{
 
         <h5> Medication: {this.props.medication.name}</h5>
         <h5> Dosage: {this.props.medication.medication_dose}</h5>
+        <h5> Last Taken On: {this.props.medication.last_taken}</h5>
             <form onSubmit={this.submitHandler}>
 
                 <input type="text" placeholder="Last Taken" value={this.state.last_taken} onChange={this.onChangeHandler}

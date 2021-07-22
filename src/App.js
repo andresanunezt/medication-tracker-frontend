@@ -36,8 +36,8 @@ render() {
     <Navbar />
     <Switch>
     <Route exact path ="/" component ={Home} /> 
-    <Route exact path="/medications" component={ Medications } />
-    <Route exact path="/medications/new" component={ NewMedicationForm } />
+    <Route exact path="/medications" component={ Medications } /> 
+    <Route exact path="/medications/new" component={ NewMedicationForm } /> 
     <Route exact path="/medications/:id/edit" component={ EditMedicationForm} />
      
      </Switch>
