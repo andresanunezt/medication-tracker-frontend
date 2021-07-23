@@ -14,8 +14,9 @@ const Navbar = () => {
         <li className="navlink-li"><NavLink className="navlink-item" to="/">Home </NavLink></li>
         <li className="navlink-li"><NavLink className="navlink-item" to="/medications">Medication List</NavLink></li>
         <li className="navlink-li"><NavLink className="navlink-item" to="/medications/new">Add New Medication</NavLink></li>
-        <Route exact path="/medications/new" component={ NewMedicationForm } />   
+        
             </ul>
+            <Route exact path="/medications/new" component={ NewMedicationForm } />   
         </div>
     )
 }

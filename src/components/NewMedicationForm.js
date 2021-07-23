@@ -53,7 +53,7 @@ class NewMedicationForm extends Component{
         <div className="centered">
             
             <form onSubmit={this.submitHandler}>
-            <h4> ADD MEDICATION</h4>
+            <h4>ADD MEDICATION</h4>
                 <input type="text" placeholder="Name" value={this.state.name} onChange={this.onChangeHandler}
                     name="name"
                 /> <br></br>

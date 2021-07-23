@@ -1,7 +1,6 @@
 import './App.css';
 import { Component } from 'react';
 import  Medications  from './containers/Medications';
-import NewMedicationForm from './components/NewMedicationForm';
 import EditMedicationForm from './components/EditMedicationForm';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
@@ -11,9 +10,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 class App extends Component{ 
-
-
-  
 
 
 render() {
