@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { NavLink } from 'react-router-dom';
+import { Router, Route, NavLink } from 'react-router-dom';
+import NewMedicationForm from './NewMedicationForm';
 
 const Navbar = () => {
     return (
@@ -9,10 +10,11 @@ const Navbar = () => {
             <ul className="navlinks-list">
 
            
+                
         <li className="navlink-li"><NavLink className="navlink-item" to="/">Home </NavLink></li>
         <li className="navlink-li"><NavLink className="navlink-item" to="/medications">Medication List</NavLink></li>
         <li className="navlink-li"><NavLink className="navlink-item" to="/medications/new">Add New Medication</NavLink></li>
-    
+        <Route exact path="/medications/new" component={ NewMedicationForm } />   
             </ul>
         </div>
     )
