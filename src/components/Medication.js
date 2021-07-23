@@ -4,9 +4,8 @@ import { Card } from 'react-bootstrap';
 
 import { connect } from 'react-redux'
 
-import EditMedicationForm from "./EditMedicationForm"
 
-// import { NavLink } from 'react-router-dom'
+
 import { BrowserRouter as Router, Switch, Route, NavLink, Link } from 'react-router-dom';
 
 import DeleteMedicationButton from "./DeleteMedicationButton.js";
@@ -39,15 +38,9 @@ const Medication = ({ medication, deleteMedication, editMedication }) => {
 
                
 
-             <Router>
+             
                 <NavLink to={`/medications/${medication.id}/edit`}><button className="btn" onClick={()=>editMedication(medication)}>Edit</button></NavLink>
-                <Switch>
-               <Route exact path="/medications/:id/edit" component={ EditMedicationForm} />
-                
-               </Switch>   
-
-
-                </Router>
+               
             
             </Card>
             
