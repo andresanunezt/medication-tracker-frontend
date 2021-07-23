@@ -26,15 +26,14 @@ class DeleteMedicationButton extends Component{
         }
 
 
-    render(){ console.log(this.props)
-        
+    render(){ 
 
        
 
         return(<>
 
 
-<br></br>
+            <br></br>
 <button onClick={this.clickHandler}> Delete Medication</button><br/>
 <br></br>
         

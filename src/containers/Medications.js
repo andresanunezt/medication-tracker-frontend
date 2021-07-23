@@ -1,19 +1,11 @@
 import { Component } from "react";
-
 import { connect } from 'react-redux'
-
 import { fetchAllMeds } from '../redux/actions/index.js'
-
-import EditMedicationForm from "../components/EditMedicationForm.js";
-
-import { Route } from 'react-router-dom';
-
 import Medication from "../components/Medication.js";
 
 class Medications extends Component{ 
 
 
-    
     componentDidMount(){
 
         
@@ -23,7 +15,9 @@ class Medications extends Component{
     }
 
 
-    render(){ console.log(this.props)
+    render(){ 
+        
+        console.log(this.props)
         
 
         const meds = this.props.medications.map(  (medication, i)=>{  
