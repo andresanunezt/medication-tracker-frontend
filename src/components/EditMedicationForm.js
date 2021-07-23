@@ -13,6 +13,8 @@ import { editMedication } from '../redux/actions/index.js'
 class EditMedicationForm extends Component{
 
 
+   
+
     constructor(){ super();
         
         console.log()
@@ -92,10 +94,11 @@ class EditMedicationForm extends Component{
 
 }
 
-const mapStateToProps =(state,medId)=>{ 
-
+const mapStateToProps =(state,routerProps)=>{ 
+    console.log(routerProps)
+    console.log(this)
     console.log(state)
-    const id = parseInt(medId.match.params.id)
+    const id = parseInt(routerProps.medication.id)
     console.log(id)
     return{
         medication: state.medicationReducer.find(med => med.id === id)

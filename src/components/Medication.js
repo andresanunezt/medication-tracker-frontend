@@ -4,15 +4,15 @@ import { Card } from 'react-bootstrap';
 
 import { connect } from 'react-redux'
 
+import EditMedicationForm from './EditMedicationForm.js';
 
-
-import { BrowserRouter as Router, Switch, Route, NavLink, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
 import DeleteMedicationButton from "./DeleteMedicationButton.js";
 
-import { deleteMedication, editMedication} from '../redux/actions/index.js'
+import {  editMedication} from '../redux/actions/index.js'
 
-const Medication = ({ medication, deleteMedication, editMedication }) => {
+const Medication = ({ medication, editMedication, match }) => {
 
 
 
@@ -38,10 +38,12 @@ const Medication = ({ medication, deleteMedication, editMedication }) => {
 
                
 
-             
-                <NavLink to={`/medications/${medication.id}/edit`}><button className="btn" onClick={()=>editMedication(medication)}>Edit</button></NavLink>
                
-            
+     
+                <NavLink to={`/medications/${medication.id}/edit`}><button className="btn" onClick={()=>editMedication(medication)}>Edit</button></NavLink>
+
+                <Route path={`${match.url}/${medication.id}/edit`} render={routerProps => <EditMedicationForm {...routerProps} medication={medication} key={medication.id}/>}/>
+                
             </Card>
             
             
@@ -68,6 +70,6 @@ const cardStyle = {
     paddingTop: 25, 
     paddingLeft: 50 
 }
-export default connect(null, { deleteMedication, editMedication })(Medication)
+export default connect(null, {  editMedication })(Medication)
  
 

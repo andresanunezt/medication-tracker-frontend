@@ -3,14 +3,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-
-  // import redux from 'react-redux'
-
-  import { Provider } from 'react-redux'
-  import { createStore, compose, applyMiddleware } from 'redux'
-  import rootReducer from './redux/reducers'
-  import thunk from 'redux-thunk'
+import { Provider } from 'react-redux'
+import { createStore, compose, applyMiddleware } from 'redux'
+import rootReducer from './redux/reducers'
+import thunk from 'redux-thunk'
 
 
  
