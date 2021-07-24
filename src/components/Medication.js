@@ -62,13 +62,15 @@ const Medication = ({ medication, editMedication, match }) => {
 
 const cardStyle = {
     
+    
     width: '18rem', 
     border: '3px solid green', 
-    marginBottom: 50, 
-    marginTop: 50, 
+    marginBottom: 25, 
+    marginTop: 25, 
     paddingBottom: 25, 
     paddingTop: 25, 
-    paddingLeft: 50 
+    paddingLeft: 25,
+    paddingRight: 10,
 }
 export default connect(null, {  editMedication })(Medication)
  
