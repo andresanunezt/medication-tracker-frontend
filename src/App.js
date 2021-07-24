@@ -14,7 +14,7 @@ class App extends Component{
 
 render() {
 
-  return (<>
+  return (
   <div>
   
 
@@ -24,15 +24,14 @@ render() {
     <Switch>
     <Route exact path ="/" component ={Home} /> 
     <Route path='/medications' render={routerProps => <Medications {...routerProps} />} />
-  
-    {/* <Route exact path="/medications/new" component={ NewMedicationForm } />  */}
     <Route exact path="/medications/:id/edit" component={ EditMedicationForm} />
-    
      </Switch>
      <Footer />
      </Router>
-</div>
-  </>)};
+
+      </div>
+       
+  )};
 
  
   }

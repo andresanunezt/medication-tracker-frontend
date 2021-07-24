@@ -14,3 +14,23 @@ code {
 }
 
 
+.navbar {
+  background-color: rgb(250, 246, 0);
+  font-size: large;
+  padding: 15px;
+}
+
+.navlinks-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.navlink-li {
+  display: inline;
+  margin: 20px;
+  text-align: center;
+  padding-top: 18px;
+  padding-bottom: 16px;
+}
