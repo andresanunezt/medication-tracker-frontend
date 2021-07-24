@@ -1,7 +1,7 @@
 import { Component } from "react"
 import { connect } from 'react-redux'
 import { editMedication } from '../redux/actions/index.js'
-
+import DateTimePicker from 'react-datetime-picker';
 
 
 class EditMedicationForm extends Component{
@@ -12,7 +12,7 @@ class EditMedicationForm extends Component{
     constructor(){ super();
         
         console.log()
-        this.state={ id: "", last_taken: "" }
+        this.state={ id: "", last_taken: Date()}
 
     }
 
@@ -47,10 +47,13 @@ class EditMedicationForm extends Component{
     }
     onChangeHandler=(e)=>{ 
 
-        console.log("name: ",e.target.name, "value: ", e.target.value) 
 
-        this.setState({ [e.target.name]: e.target.value })
-
+        console.log(e)
+        // console.log("name: ",e.target.name, "value: ", e.target.value) 
+        // console.log(date)
+        // this.setState({ [e.target.name]: e.target.value })
+        this.setState({ last_taken: e })
+        // this.setState({ last_taken: date })
         console.log(this.state)
 
         
@@ -66,8 +69,7 @@ class EditMedicationForm extends Component{
 
         return(<>
         
-        <div>
-
+       
     
 
         <h5> Medication: {this.props.medication.name}</h5>
@@ -75,14 +77,19 @@ class EditMedicationForm extends Component{
         <h5> Last Taken On: {this.props.medication.last_taken}</h5>
             <form onSubmit={this.submitHandler}>
 
-                <input type="text" placeholder="Last Taken" value={this.state.last_taken} onChange={this.onChangeHandler}
+      <DateTimePicker onChange={this.onChangeHandler}
+        value={this.state.last_taken} name="last_taken"/>
+  
+                {/* <input type="text" placeholder="Last Taken" value={this.state.last_taken} onChange={this.onChangeHandler}
                     name="last_taken"
-                />
+                /> */}
+
+                
                 <input type="submit" value="update"/>
             </form>
 
             <h5> Update the time you last took your medication! </h5>
-        </div>
+   
 
     </>);}
 
