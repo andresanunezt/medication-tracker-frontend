@@ -12,7 +12,7 @@ class EditMedicationForm extends Component{
     constructor(){ super();
         
         console.log()
-        this.state={ id: "", last_taken: Date()}
+        this.state={id: "", last_taken: new Date()}
 
     }
 
@@ -45,6 +45,8 @@ class EditMedicationForm extends Component{
         
     
     }
+    
+    
     onChangeHandler=(e)=>{ 
 
 
@@ -53,6 +55,7 @@ class EditMedicationForm extends Component{
         // console.log(date)
         // this.setState({ [e.target.name]: e.target.value })
         this.setState({ last_taken: e })
+        // this.setState({ last_taken: new Date(e) })
         // this.setState({ last_taken: date })
         console.log(this.state)
 
@@ -60,8 +63,14 @@ class EditMedicationForm extends Component{
         
 
     }
+
+    // dateHandler=(e) => {
+
+    //     this.setState({ last_taken: e })
+    // }
     
 
+    
 
     render(){  
 
@@ -75,19 +84,21 @@ class EditMedicationForm extends Component{
         <h5> Medication: {this.props.medication.name}</h5>
         <h5> Dosage: {this.props.medication.medication_dose}</h5>
         <h5> Last Taken On: {this.props.medication.last_taken}</h5>
+        <h5> Last Taken On: {this.props.medication.last_taken}</h5>
             <form onSubmit={this.submitHandler}>
-
-      <DateTimePicker onChange={this.onChangeHandler}
-        value={this.state.last_taken} name="last_taken"/>
-  
+     
+                <DateTimePicker onChange={this.onChangeHandler} value={this.state.last_taken} name="last_taken"/>
+                
                 {/* <input type="text" placeholder="Last Taken" value={this.state.last_taken} onChange={this.onChangeHandler}
                     name="last_taken"
                 /> */}
 
-                
-                <input type="submit" value="update"/>
+            
+            <br></br>
+            <br></br>
+            <input type="submit" value="update"/>
+            
             </form>
-
             <h5> Update the time you last took your medication! </h5>
    
 

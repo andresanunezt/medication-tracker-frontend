@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 
 import { addNewMedication } from '../redux/actions/index.js'
  
+import DateTimePicker from 'react-datetime-picker';
 
 
 
@@ -14,7 +15,7 @@ class NewMedicationForm extends Component{
 
     constructor(){ super();
         
-        this.state={ name: "",directions: "", brand_name: "", medication_dose: "", medication_description: "",last_taken: "" }
+        this.state={ name: "",directions: "", brand_name: "", medication_dose: "", medication_description: "",last_taken: new Date()}
 
     }
     
@@ -40,6 +41,11 @@ class NewMedicationForm extends Component{
 
         
 
+    }
+
+    dateHandler=(e) => {
+
+        this.setState({ last_taken: e })
     }
   
      
@@ -69,11 +75,14 @@ class NewMedicationForm extends Component{
                 <input type="textarea" placeholder="Description" value={this.state.medication_description} onChange={this.onChangeHandler}
                     name="medication_description"
                 /><br></br>
-                <input type="text" placeholder="Last Taken" value={this.state.last_taken} onChange={this.onChangeHandler}
+                {/* <input type="text" placeholder="Last Taken" value={this.state.last_taken} onChange={this.onChangeHandler}
                     name="last_taken"
-                />  <br></br>
+                />  <br></br> */}
+                <DateTimePicker onChange={this.dateHandler}
+                value={this.state.last_taken} name="last_taken"/>
 
-                <br></br>
+                
+<br></br>
                 <input type="submit" value="submit"/>
                 
             </form>

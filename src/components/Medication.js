@@ -15,13 +15,17 @@ import {  editMedication} from '../redux/actions/index.js'
 const Medication = ({ medication, editMedication, match }) => {
 
 
+    
 
-
-
-
+    let strftime = require('strftime')
+    // console.log(strftime('%F %T', medication.last_taken))
+    console.log(medication.last_taken)
+    strftime('%F %T', new Date(medication.last_taken))
+    // debugger
     return (
         
-       
+        
+        
                 <div className="centered">
                     <Card style={cardStyle} data-id={medication.id}>
                     <Card.Body>
@@ -30,8 +34,11 @@ const Medication = ({ medication, editMedication, match }) => {
                     <Card.Text>Brand Name: {medication.brand_name}</Card.Text>
                     <Card.Text>Dosage: {medication.medication_dose} </Card.Text>
                     <Card.Text>Description: {medication.medication_description} </Card.Text>
-                    <Card.Text>Last Taken: {medication.last_taken} </Card.Text>
-              
+                    <Card.Text>Last Taken NO strftime: {medication.last_taken} </Card.Text>
+                    
+                    <Card.Text>Last Taken: { strftime('%B %d, %Y %H:%M:%S', new Date(medication.last_taken))} </Card.Text>
+        
+                    {/* console.log({strftime('%B %d, %Y %H:%M:%S',medication.last_taken)}) */}
                     <DeleteMedicationButton medication={medication}/>
                  
                 </Card.Body>
@@ -49,7 +56,7 @@ const Medication = ({ medication, editMedication, match }) => {
             
             </div>
            
-      
+           
     );  
 
 
