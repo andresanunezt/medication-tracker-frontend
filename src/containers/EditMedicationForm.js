@@ -47,28 +47,28 @@ class EditMedicationForm extends Component{
     }
     
     
-    // onChangeHandler=(e)=>{ 
+    onChangeHandler=(e)=>{ 
 
         
 
-    //     console.log(e)
-    //     // console.log("name: ",e.target.name, "value: ", e.target.value) 
-    //     // console.log(date)
-    //     // this.setState({ [e.target.name]: e.target.value })
-    //     this.setState({ last_taken: new Date(e) })
-    //     // this.setState({ last_taken: new Date(e) })
-    //     // this.setState({ last_taken: date })
-    //     console.log(this.state)
+        console.log(e)
+        // console.log("name: ",e.target.name, "value: ", e.target.value) 
+        // console.log(date)
+        // this.setState({ [e.target.name]: e.target.value })
+        this.setState({ last_taken: new Date(e) })
+        // this.setState({ last_taken: new Date(e) })
+        // this.setState({ last_taken: date })
+        console.log(this.state)
 
         
         
 
-    // }
-
-    dateHandler=(e) => {
-
-        this.setState({ last_taken: e })
     }
+
+    // dateHandler=(e) => {
+
+    //     this.setState({ last_taken: e })
+    // }
     
 
     
@@ -89,7 +89,7 @@ class EditMedicationForm extends Component{
   
             <form onSubmit={this.submitHandler}>
      
-            <DateTimePicker onChange={this.dateHandler} value={this.state.last_taken} name="last_taken"/>
+            <DateTimePicker onChange={this.onChangeHandler} value={this.state.last_taken} name="last_taken"/>
 
                 {/* <input type="text" placeholder="Last Taken" value={this.state.last_taken} onChange={this.onChangeHandler}
                     name="last_taken"

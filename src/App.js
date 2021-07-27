@@ -9,10 +9,10 @@ import Logo from './components/Logo'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
-class App extends Component{ 
+function App() { 
 
 
-render() {
+
 
   return (
   <div>
@@ -31,7 +31,7 @@ render() {
 
       </div>
        
-  )};
+  )
 
  
   }
