@@ -1,46 +1,41 @@
-import { Component } from "react"
 
 import { connect } from 'react-redux'
 
 import { deleteMedication} from '../redux/actions/index.js'
 
 
-class DeleteMedicationButton extends Component{ 
+function DeleteMedicationButton(props) { 
 
 
-    clickHandler=(e)=>{  //console.log(e);  //
-        // console.log(e.target.innerText)
+   function clickHandler(e) {  
   
-  
-        console.log(this.props)
+        console.log(props)
           
-          if(e.target.matches("button")){ console.log(e.target.innerText) 
-
-
-    
-          
-              this.props.deleteMedication(this.props.medication)
+          if(e.target.matches("button")){ 
+              
+            
+            console.log(e.target.innerText) 
+            
+            props.deleteMedication(props.medication)
   
           } 
           
         }
 
 
-    render(){ 
-
-       
+    // render(){ 
 
         return(<>
 
         
             
-<button  onClick={this.clickHandler}>Delete Medication</button><br/>
-<br></br>
+                <button  onClick={clickHandler}>Delete Medication</button><br/>
+                <br></br>
 
 
         </>)
 
-    }
+    // }
     
 
 

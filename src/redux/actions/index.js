@@ -20,6 +20,7 @@ export const fetchAllMeds =()=>{
 
     console.log(newMedication)
     console.log(JSON.stringify(newMedication))
+    
     return (dispatch)=>{
 
         debugger
@@ -39,10 +40,7 @@ export const fetchAllMeds =()=>{
   
     }
   
-   // return
-    //     type: "ADD_NEW_MEDICATION", medications: medications
-
-    // }
+  
 
 }
 
