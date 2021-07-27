@@ -21,7 +21,7 @@ class EditMedicationForm extends Component{
 
         this.setState({
             id: this.props.medication.id,
-            last_taken: new Date()
+            last_taken: new Date(this.props.medication.last_taken)
         
         })
 
