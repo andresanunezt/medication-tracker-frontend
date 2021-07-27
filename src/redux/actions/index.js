@@ -20,10 +20,10 @@ export const fetchAllMeds =()=>{
 
     console.log(newMedication)
     console.log(JSON.stringify(newMedication))
-    
+
     return (dispatch)=>{
 
-        debugger
+        // debugger
         fetch('http://localhost:3000/medications',{
         
             method: "POST",
@@ -33,7 +33,7 @@ export const fetchAllMeds =()=>{
           })
         .then(resp => resp.json())
         .then(medication => {  console.log(medication)  
-  debugger
+//   debugger
             dispatch({ type: "ADD_NEW_MEDICATION", medication: medication })
          
         })

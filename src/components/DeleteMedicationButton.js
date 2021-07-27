@@ -4,16 +4,15 @@ import { connect } from 'react-redux'
 import { deleteMedication} from '../redux/actions/index.js'
 
 
-function DeleteMedicationButton(props) { 
+const DeleteMedicationButton = (props) => { 
 
 
-   function clickHandler(e) {  
+   const clickHandler = (e) => {  
   
-        console.log(props)
+            console.log(props)
           
           if(e.target.matches("button")){ 
               
-            
             console.log(e.target.innerText) 
             
             props.deleteMedication(props.medication)

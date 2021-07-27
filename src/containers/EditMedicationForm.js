@@ -10,8 +10,7 @@ class EditMedicationForm extends Component{
    
 
     constructor(){ super();
-        
-        console.log()
+   
         this.state={id: "", last_taken: new Date()}
 
     }
@@ -21,7 +20,7 @@ class EditMedicationForm extends Component{
 
         this.setState({
             id: this.props.medication.id,
-            last_taken: new Date(this.props.medication.last_taken)
+            last_taken: new Date()
         
         })
 
@@ -52,25 +51,18 @@ class EditMedicationForm extends Component{
         
 
         console.log(e)
-        // console.log("name: ",e.target.name, "value: ", e.target.value) 
-        // console.log(date)
-        // this.setState({ [e.target.name]: e.target.value })
-        this.setState({ last_taken: new Date(e) })
-        // this.setState({ last_taken: new Date(e) })
-        // this.setState({ last_taken: date })
-        console.log(this.state)
-
         
+        this.setState({ last_taken: new Date(e) })
+       
+        console.log(this.state)
+    
         
 
     }
 
-    // dateHandler=(e) => {
-
-    //     this.setState({ last_taken: e })
-    // }
+  
     
-
+     strftime = require('strftime')
     
 
     render(){  
@@ -85,19 +77,19 @@ class EditMedicationForm extends Component{
 
         <h5> Medication: {this.props.medication.name}</h5>
         <h5> Dosage: {this.props.medication.medication_dose}</h5>
-        <h5> Last Taken On: {this.props.medication.last_taken}</h5>
+        <h5> Last Taken On: { this.strftime('%B %d, %Y %H:%M:%S', new Date(this.props.medication.last_taken))} </h5>
   
             <form onSubmit={this.submitHandler}>
      
             <DateTimePicker onChange={this.onChangeHandler} value={this.state.last_taken} name="last_taken"/>
 
-                {/* <input type="text" placeholder="Last Taken" value={this.state.last_taken} onChange={this.onChangeHandler}
+            {/* <input type="text" placeholder="Last Taken" value={this.state.last_taken} onChange={this.onChangeHandler}
                     name="last_taken"
                 /> */}
 
-            
             <br></br>
             <br></br>
+
             <input type="submit" value="update"/>
             
             </form>
@@ -112,8 +104,9 @@ class EditMedicationForm extends Component{
 
 const mapStateToProps =(state,routerProps)=>{ 
     console.log(routerProps)
-    console.log(this)
+   
     console.log(state)
+
     const id = parseInt(routerProps.medication.id)
     console.log(id)
     return{
