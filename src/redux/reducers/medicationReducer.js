@@ -9,8 +9,8 @@ export const medicationReducer =  (state = [], action)=> {
           return [...action.medications]
 
         case "ADD_NEW_MEDICATION":
-
-         return [...state,action.medication]
+console.log(state, action.medication)
+            return [...state,action.medication]
          
          
          case "EDIT_MEDICATION":

@@ -30,7 +30,7 @@ class Medications extends Component{
       return(
 
       
-           <Medication key={medication.id} medication={medication}  match={this.props.match}/>
+           <Medication key={i} medication={medication}  match={this.props.match}/>
 
            )  }  )
        
@@ -52,7 +52,7 @@ class Medications extends Component{
 
 const mapStateToProps =(state)=>{ 
 
-    console.log(state)
+    console.log(state.medicationReducer)
     
     return{
        medications: state.medicationReducer,

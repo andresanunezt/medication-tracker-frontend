@@ -25,7 +25,7 @@ class NewMedicationForm extends Component{
     
         console.log(this.state)
         console.log(this.props)
-        console.log()
+        console.log(this.state.last_taken)
 
         
         this.props.addNewMedication( this.state )
@@ -39,12 +39,12 @@ class NewMedicationForm extends Component{
         this.setState({ [e.target.name]: e.target.value })
 
 
-        
+        console.log([e.target.name], ':', e.target.value)
 
     }
 
     dateHandler=(e) => {
-
+        console.log(e)
         this.setState({ last_taken: e })
     }
   
@@ -78,8 +78,7 @@ class NewMedicationForm extends Component{
                 {/* <input type="text" placeholder="Last Taken" value={this.state.last_taken} onChange={this.onChangeHandler}
                     name="last_taken"
                 />  <br></br> */}
-                <DateTimePicker onChange={this.dateHandler}
-                value={this.state.last_taken} name="last_taken"/>
+                <DateTimePicker onChange={this.dateHandler} value={this.state.last_taken} name="last_taken"/>
 
                 
 <br></br>

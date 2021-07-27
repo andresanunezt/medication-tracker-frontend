@@ -15,25 +15,26 @@ export const fetchAllMeds =()=>{
   }
 
 
-  export const addNewMedication =(medications)=>{
+  export const addNewMedication =(newMedication)=>{
 
 
-    console.log(medications)
-    console.log(JSON.stringify(medications))
+    console.log(newMedication)
+    console.log(JSON.stringify(newMedication))
     return (dispatch)=>{
 
+        debugger
         fetch('http://localhost:3000/medications',{
         
             method: "POST",
             headers: { "Content-Type": "application/json"},
-            body: JSON.stringify(medications),
+            body: JSON.stringify({medication: newMedication}),
           
           })
         .then(resp => resp.json())
         .then(medication => {  console.log(medication)  
-  
+  debugger
             dispatch({ type: "ADD_NEW_MEDICATION", medication: medication })
-           
+         
         })
   
     }

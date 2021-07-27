@@ -1,7 +1,7 @@
 import './App.css';
 import { Component } from 'react';
 import  Medications  from './containers/Medications';
-import EditMedicationForm from './components/EditMedicationForm';
+import EditMedicationForm from './containers/EditMedicationForm';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Home from './components/Home'

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Router, Route, NavLink } from 'react-router-dom';
-import NewMedicationForm from './NewMedicationForm';
+import NewMedicationForm from '../containers/NewMedicationForm';
 
 const Navbar = () => {
     return (

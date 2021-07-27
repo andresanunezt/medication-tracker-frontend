@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap';
 
 import { connect } from 'react-redux'
 
-import EditMedicationForm from './EditMedicationForm.js';
+import EditMedicationForm from '../containers/EditMedicationForm.js';
 
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
@@ -21,6 +21,8 @@ const Medication = ({ medication, editMedication, match }) => {
     // console.log(strftime('%F %T', medication.last_taken))
     // console.log(medication.last_taken)
     // strftime('%F %T', new Date(medication.last_taken))
+
+    console.log()
     // // debugger
     return (
         
@@ -34,8 +36,8 @@ const Medication = ({ medication, editMedication, match }) => {
                     <Card.Text>Brand Name: {medication.brand_name}</Card.Text>
                     <Card.Text>Dosage: {medication.medication_dose} </Card.Text>
                     <Card.Text>Description: {medication.medication_description} </Card.Text>
-                    {/* <Card.Text>Last Taken NO strftime: {medication.last_taken} </Card.Text>
-                     */}
+                    <Card.Text>Last Taken NO strftime: {medication.last_taken} </Card.Text>
+                    
                     <Card.Text>Last Taken: { strftime('%B %d, %Y %H:%M:%S', new Date(medication.last_taken))} </Card.Text>
         
                     {/* console.log({strftime('%B %d, %Y %H:%M:%S',medication.last_taken)}) */}
