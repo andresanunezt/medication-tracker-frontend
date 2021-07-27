@@ -18,12 +18,10 @@ const Medication = ({ medication, editMedication, match }) => {
     
 
     let strftime = require('strftime')
-    // console.log(strftime('%F %T', medication.last_taken))
-    // console.log(medication.last_taken)
-    // strftime('%F %T', new Date(medication.last_taken))
 
-    console.log()
-    // // debugger
+
+   
+   
     return (
         
         
