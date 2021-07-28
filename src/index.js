@@ -21,12 +21,11 @@ console.log(composeEnhancers)
 console.log(store);
 
 ReactDOM.render(
-  // <React.StrictMode>
+  <React.StrictMode>
     <Provider store={store}>
-      <App />,
-  
-    </Provider>,
-
+      <App />
+    </Provider>
+  </React.StrictMode>,
   document.getElementById('root')
 );
 

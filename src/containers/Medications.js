@@ -1,65 +1,40 @@
 import { Component } from "react";
-import { connect } from 'react-redux'
-import { fetchAllMeds } from '../redux/actions/index.js'
+import { connect } from "react-redux";
+import { fetchAllMeds } from "../redux/actions/index.js";
 import Medication from "../components/Medication.js";
 
-class Medications extends Component{ 
+class Medications extends Component {
+  componentDidMount() {
+    this.props.fetchAllMeds();
+  }
 
+  render() {
+    console.log(this.props);
 
-    componentDidMount(){
+    const meds = this.props.medications.map((medication, i) => {
+      console.log(medication, i);
 
-        
-        this.props.fetchAllMeds()
-        
-    
-    }
+      console.log(this);
 
+      return <Medication key={i} medication={medication} />;
+    });
 
-    render(){ 
-        
-        console.log(this.props)
-        
-
-        const meds = this.props.medications.map(  (medication, i)=>{  
-            
-           console.log(medication,i)
-
-           console.log(this)
-            
-         
-      return(
-
-      
-           <Medication key={i} medication={medication}  match={this.props.match}/>
-
-           )  }  )
-       
-
-        return(<>
-
-     
+    return (
+      <>
         <h2 className="centered">Medications</h2>
- 
+
         {meds}
-       
-       
-        </>)
-
-    }
-    
+      </>
+    );
+  }
 }
 
+const mapStateToProps = (state) => {
+  console.log(state.medicationReducer);
 
-const mapStateToProps =(state)=>{ 
+  return {
+    medications: state.medicationReducer,
+  };
+};
 
-    console.log(state.medicationReducer)
-    
-    return{
-       medications: state.medicationReducer,
-        
-    }
-
-}
-
-export default connect(mapStateToProps, { fetchAllMeds })(Medications)
- 
+export default connect(mapStateToProps, { fetchAllMeds })(Medications);

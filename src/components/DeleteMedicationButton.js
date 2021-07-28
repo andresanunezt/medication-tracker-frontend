@@ -1,44 +1,25 @@
+import { connect } from "react-redux";
 
-import { connect } from 'react-redux'
+import { deleteMedication } from "../redux/actions/index.js";
 
-import { deleteMedication} from '../redux/actions/index.js'
+const DeleteMedicationButton = (props) => {
+  const clickHandler = (e) => {
+    console.log(props);
 
+    if (e.target.matches("button")) {
+      console.log(e.target.innerText);
 
-const DeleteMedicationButton = (props) => { 
+      props.deleteMedication(props.medication);
+    }
+  };
 
+  return (
+    <>
+      <button onClick={clickHandler}>Delete Medication</button>
+      <br />
+      <br></br>
+    </>
+  );
+};
 
-   const clickHandler = (e) => {  
-  
-            console.log(props)
-          
-          if(e.target.matches("button")){ 
-              
-            console.log(e.target.innerText) 
-            
-            props.deleteMedication(props.medication)
-  
-          } 
-          
-        }
-
-
-    // render(){ 
-
-        return(<>
-
-        
-            
-                <button  onClick={clickHandler}>Delete Medication</button><br/>
-                <br></br>
-
-
-        </>)
-
-    // }
-    
-
-
-}
-
-export default connect(null, { deleteMedication })(DeleteMedicationButton)
- 
+export default connect(null, { deleteMedication })(DeleteMedicationButton);
