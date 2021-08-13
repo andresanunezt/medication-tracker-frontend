@@ -1,14 +1,14 @@
 import { Card } from "react-bootstrap";
-// import { connect } from "react-redux";
+import IncrementButton from "./Button.js";
 import EditMedicationForm from "../containers/EditMedicationForm.js";
 import { Route, NavLink } from "react-router-dom";
 import DeleteMedicationButton from "./DeleteMedicationButton.js";
+import { useState } from "react";
 // import { editMedication } from "../redux/actions/index.js";
 
 // const Medication = ({ medication, editMedication }) => {
 const Medication = ({ medication }) => {
   let strftime = require("strftime");
-
   return (
     <div className="centered">
       <Card style={cardStyle} data-id={medication.id}>
@@ -16,39 +16,22 @@ const Medication = ({ medication }) => {
           <Card.Title style={{ color: "red" }}> {medication.name} </Card.Title>
           <Card.Text> Directions:{medication.directions}</Card.Text>
           <Card.Text>Brand Name: {medication.brand_name}</Card.Text>
-          <Card.Text>Dosage: {medication.medication_dose} </Card.Text>
+          <Card.Text>Dosage: {medication.medication_dose}</Card.Text>
           <Card.Text>
-            Description: {medication.medication_description}{" "}
+            Description: {medication.medication_description}
           </Card.Text>
           {/* <Card.Text>Last Taken NO strftime: {medication.last_taken} </Card.Text>
            */}
           <Card.Text>
             Last Taken:{" "}
-            {strftime("%B %d, %Y %H:%M:%S", new Date(medication.last_taken))}{" "}
+            {strftime("%B %d, %Y %H:%M", new Date(medication.last_taken))}{" "}
           </Card.Text>
 
           <DeleteMedicationButton medication={medication} />
         </Card.Body>
-
         <NavLink to={`/medications/${medication.id}/edit`}>
-          {/* <button className="btn" onClick={() => editMedication(medication)}> */}
           <button className="btn">Edit</button>
         </NavLink>
-
-        {/* <Route
-          path={`/medications/${medication.id}/edit`}
-          render={(props) => (
-            console.log(props),
-            (<EditMedicationForm {...props} medication={medication} />)
-          )}
-        /> */}
-        {/* <Route
-          path={`/medications/${medication.id}/edit`}
-          render={(props) => (
-            console.log(props),
-            (<EditMedicationForm {...props} medication={medication} />)
-          )}
-        /> */}
 
         <Route
           path={`/medications/${medication.id}/edit`}
@@ -56,16 +39,6 @@ const Medication = ({ medication }) => {
             <EditMedicationForm {...props} medication={medication} />
           )}
         />
-
-        {/* <Route
-          path={`/medications/${medication.id}/edit`}
-          render={(routerProps) => (
-            <EditMedicationForm
-              {...routerProps}
-              medication={medication}
-              key={medication.id}
-            />
-          )} */}
       </Card>
     </div>
   );

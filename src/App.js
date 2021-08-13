@@ -1,5 +1,6 @@
 import "./App.css";
 import Medications from "./containers/Medications";
+import NewMedicationForm from "./containers/NewMedicationForm";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
@@ -14,11 +15,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
-          {/* <Route exact path="/medications" component={Medications} /> */}
-          <Route
-            path="/medications"
-            render={(routerProps) => <Medications {...routerProps} />}
-          />
+          <Route path="/medications" component={Medications} />
         </Switch>
         <Footer />
       </Router>

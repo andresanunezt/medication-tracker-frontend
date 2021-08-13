@@ -7,7 +7,7 @@ class EditMedicationForm extends Component {
   constructor() {
     super();
 
-    this.state = { id: "", last_taken: new Date() };
+    this.state = { id: "", last_taken: "" };
   }
 
   componentDidMount() {
@@ -52,7 +52,7 @@ class EditMedicationForm extends Component {
           {" "}
           Last Taken On:{" "}
           {this.strftime(
-            "%B %d, %Y %H:%M:%S",
+            "%B %d, %Y %H:%M",
             new Date(this.props.medication.last_taken)
           )}{" "}
         </h5>
@@ -79,23 +79,6 @@ class EditMedicationForm extends Component {
     );
   }
 }
-
-// const mapStateToProps = (state, routerProps) => {
-//   console.log(routerProps);
-
-//   console.log(state);
-//   console.log(state.medicationReducer);
-
-//   const id = parseInt(routerProps.medication.id);
-//   console.log(id);
-//   return {
-//     medication: state.medicationReducer.find((med) => med.id === id),
-//   };
-// };
-
-// export default connect(mapStateToProps, {
-//   editMedicationDispatcher: editMedication,
-// })(EditMedicationForm);
 
 export default connect(null, {
   editMedicationDispatcher: editMedication,
