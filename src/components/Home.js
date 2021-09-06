@@ -10,8 +10,7 @@ const Home = () => {
         <br></br>A virtual way for you to log the last time you took your
         medication.
         <br></br>
-        <br></br>A virtual way for you to log the last time you took your
-        medication.
+        <br></br>Begin by adding a medication to your list.
       </p>
     </div>
   );
