@@ -14,11 +14,16 @@ const Medication = ({ medication }) => {
       <Card style={cardStyle} data-id={medication.id}>
         <Card.Body>
           <Card.Title style={{ color: "red" }}> {medication.name} </Card.Title>
-          <Card.Text> Directions: {medication.directions}</Card.Text>
+          <Card.Text>
+            {" "}
+            Directions:
+            {medication.directions}
+          </Card.Text>
           <Card.Text>Brand Name: {medication.brand_name}</Card.Text>
           <Card.Text>Dosage: {medication.medication_dose}</Card.Text>
           <Card.Text>
-            Description: {medication.medication_description}
+            Description:
+            {medication.medication_description}
           </Card.Text>
           {/* <Card.Text>Last Taken NO strftime: {medication.last_taken} </Card.Text>
            */}
