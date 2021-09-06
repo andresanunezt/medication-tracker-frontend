@@ -1,7 +1,5 @@
 .App {
   text-align: center;
-
-
 }
 
 .App-logo {
@@ -30,9 +28,14 @@
   color: #61dafb;
 }
 
+.home-paragraph {
+  margin-top: 80px;
+
+  font-weight: bold;
+}
 
 .centered {
-   /* Magic here */
+  /* Magic here */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,4 +49,3 @@
     transform: rotate(360deg);
   }
 }
-
