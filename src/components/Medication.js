@@ -54,8 +54,6 @@ const cardStyle = {
   paddingLeft: 25,
   paddingRight: 10,
   backgroundColor: "rgb(250, 246, 0)",
-  // fontWeight: "bold",
-  // color: "rgb(147, 147, 221)",
 };
 
 export default Medication;

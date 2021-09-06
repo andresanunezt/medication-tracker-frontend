@@ -46,7 +46,7 @@ class EditMedicationForm extends Component {
 
     return (
       <>
-        <h5> Medication: {this.props.medication.name}</h5>
+        <h5> Name: {this.props.medication.name}</h5>
         <h5> Dosage: {this.props.medication.medication_dose}</h5>
         <h5>
           {" "}
