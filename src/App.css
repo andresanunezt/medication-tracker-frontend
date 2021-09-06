@@ -44,6 +44,14 @@
   align-items: center;
 }
 
+.medications-h2 {
+  /* Magic here */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+}
+
 .home-div {
   /* Magic here */
   display: flex;
@@ -66,4 +74,5 @@
 
 .footer {
   font-weight: bold;
+  color: whitesmoke;
 }
