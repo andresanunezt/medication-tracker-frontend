@@ -29,8 +29,8 @@
 }
 
 .home-paragraph {
-  margin-top: 80px;
-
+  margin: 100px;
+  padding: 1em;
   font-weight: bold;
 }
 
@@ -39,6 +39,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.home-div {
+  /* Magic here */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 400px;
+  width: 400px;
 }
 
 @keyframes App-logo-spin {
