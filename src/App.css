@@ -52,6 +52,7 @@
   margin-left: 425px;
   margin-right: 100px;
   width: 400px;
+  border: 3px black;
 }
 
 @keyframes App-logo-spin {

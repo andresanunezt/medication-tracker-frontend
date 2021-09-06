@@ -14,7 +14,7 @@ const Medication = ({ medication }) => {
       <Card style={cardStyle} data-id={medication.id}>
         <Card.Body>
           <Card.Title style={{ color: "red" }}> {medication.name} </Card.Title>
-          <Card.Text> Directions:{medication.directions}</Card.Text>
+          <Card.Text> Directions: {medication.directions}</Card.Text>
           <Card.Text>Brand Name: {medication.brand_name}</Card.Text>
           <Card.Text>Dosage: {medication.medication_dose}</Card.Text>
           <Card.Text>
@@ -46,7 +46,7 @@ const Medication = ({ medication }) => {
 
 const cardStyle = {
   width: "18rem",
-  border: "3px solid green",
+  border: "3px solid orangered",
   marginBottom: 25,
   marginTop: 25,
   paddingBottom: 25,
@@ -54,8 +54,8 @@ const cardStyle = {
   paddingLeft: 25,
   paddingRight: 10,
   backgroundColor: "rgb(250, 246, 0)",
-  fontWeight: "bold",
-  color: "lavender",
+  // fontWeight: "bold",
+  // color: "rgb(147, 147, 221)",
 };
 
 export default Medication;
