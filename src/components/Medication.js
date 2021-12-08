@@ -1,9 +1,9 @@
 import { Card } from "react-bootstrap";
-import IncrementButton from "./Button.js";
+// import IncrementButton from "./Button.js";
 import EditMedicationForm from "../containers/EditMedicationForm.js";
 import { Route, NavLink } from "react-router-dom";
 import DeleteMedicationButton from "./DeleteMedicationButton.js";
-import { useState } from "react";
+// import { useState } from "react";
 // import { editMedication } from "../redux/actions/index.js";
 
 // const Medication = ({ medication, editMedication }) => {
